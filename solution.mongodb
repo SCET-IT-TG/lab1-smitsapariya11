@@ -1,0 +1,113 @@
+/*
+.........EXERCISE 1 .........
+*/
+
+db = db.getSiblingDB("examDB");
+
+ db.students.insertOne({
+... name:"smit",
+... department:"IT",
+... semester:"6"})
+
+db.students.insertOne({
+     name: "zeel",
+      department: "IT", 
+      semester: "6" })
+
+/*
+.........EXERCISE 2.........
+*/
+
+db.students.insertOne({
+... name: "meet",
+... department: "IT",
+... semester: 6,
+... mobile: "6524859651"
+... })
+
+/*
+........EXERCISE 3..........
+*/
+
+ db.subjects.insertOne({
+...   course_name: "BCA",
+...   subject_list: [
+...     "Data Structures",
+...     "Database Management Systems",
+...     "Operating Systems",
+...     "Computer Networks",
+...     "Software Engineering"
+...   ]
+... });
+
+/*
+.........EXERCISE 4..........
+*/
+
+ db.faculty.insertOne({
+... department: "IT",
+... teachers: [
+...     {name: "ankit patel" ,experience: "10"},
+...     {name: "bhumika patel" ,experience: "9"},
+...     {name: "karishma desai" ,experience: "15"}
+...     ]
+... });
+
+/*
+..........EXERCISE 5..........
+*/
+
+db.faculty.insertOne({
+...   _id: ObjectId(),
+...   department: "IT",
+...   teachers: [
+...     { name: "dhruti sharma", experience: 12 },
+...     { name: "vibha patel", experience: 6 }
+...   ]
+... });
+
+/*
+.........EXERCISE 6..........
+*/
+
+ db.faculty.insertOne({
+...  _id: ObjectId('56561851b84524f689512a42'),
+... department: "IT",
+... teachers: [
+...     {name: "ankit kharwar"}
+...    ]
+... });
+
+db.faculty.insertOne({
+... _id: ObjectId('56561851b84524f689512a42'),
+... department: "CO",
+... teachers: [
+...    {name: "hiren patel"}
+...    ]
+... });
+MongoServerError: E11000 duplicate key error collection: examDB.faculty index: _id_ dup key: { _id: ObjectId('56561851b84524f689512a42') }
+
+/*
+..............EXERCISE 7...........
+*/
+ db.students.insert({
+... name:"kartik",
+... department:"it",
+... semester:"6",
+... mobile:"7861041587"
+... });
+
+
+ db.faculty.insert({
+... department:"IT",
+... teachers:[
+... {name:"tushar gohil"},
+... {experience:"7"}]
+... });
+
+ db.subjects.insert({
+... course_name:"B.SC",
+... subject_list:["COA",
+... "Cryptography network security",
+... "Cloud computing"]
+... });
