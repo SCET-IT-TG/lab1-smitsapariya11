@@ -9,7 +9,7 @@ db.students.insertOne({
     "mobile": "9876543210"
 });
 db.students.insertOne({ 
-    "name": "Amit Patel", 
+    "name": "meet solanki", 
     "enrollment": "ET24BTIT816",
     "department": "IT",
     "semester": 4,
@@ -18,7 +18,7 @@ db.students.insertOne({
 
 // Exercise 2: Insert Document with Multiple Fields 
 db.students.insertOne({
-    "name": "Ravi Kumar",
+    "name": "kartik vala",
     "department": "IT",
     "semester": 4,
     "mobile": "9876543212"
@@ -34,8 +34,8 @@ db.subjects.insertOne({
 db.faculty.insertOne({
     "department": "Information Technology",
     "teachers": [
-        { "name": "Prof. Sharma", "experience": 10 },
-        { "name": "Prof. Verma", "experience": 5 }
+        { "name": "Prof. patel", "experience": 10 },
+        { "name": "Prof.ankit kharwar", "experience": 5 }
     ]
 });
 
@@ -45,7 +45,7 @@ db.students.insertOne({
     "name": "Student With Manual ID",
     "department": "IT",      // Added for safety
     "semester": 4,           // Added for safety
-    "mobile": "0000000000"   // Added for safety
+    "mobile": "7861041587"   // Added for safety
 });
 
 // Exercise 6: Duplicate Primary Key Observation
@@ -58,4 +58,5 @@ db.students.insertOne({
 db.students.insert({ "name": "Batch A", "group": 1, "department": "IT", "semester": 4, "mobile": "111" });
 db.students.insert({ "name": "Batch B", "group": 2, "department": "IT", "semester": 4, "mobile": "222" });
 db.students.insert({ "name": "Batch C", "group": 3, "department": "IT", "semester": 4, "mobile": "333" });
+
 
