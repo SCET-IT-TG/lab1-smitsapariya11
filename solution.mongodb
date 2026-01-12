@@ -1,113 +1,61 @@
-/*
-.........EXERCISE 1 .........
-*/
-
 db = db.getSiblingDB("examDB");
 
- db.students.insertOne({
-... name:"smit",
-... department:"IT",
-... semester:"6"})
+//  Exercise 1: Database & Collection Creation 
+db.students.insertOne({ 
+    "name": "smit sapariya", 
+    "enrollment": "ET23BTIT121",
+    "department": "IT",
+    "semester": 4,
+    "mobile": "9876543210"
+});
+db.students.insertOne({ 
+    "name": "Amit Patel", 
+    "enrollment": "ET24BTIT816",
+    "department": "IT",
+    "semester": 4,
+    "mobile": "9876543211"
+});
 
+// Exercise 2: Insert Document with Multiple Fields 
 db.students.insertOne({
-     name: "zeel",
-      department: "IT", 
-      semester: "6" })
+    "name": "Ravi Kumar",
+    "department": "IT",
+    "semester": 4,
+    "mobile": "9876543212"
+});
 
-/*
-.........EXERCISE 2.........
-*/
+// Exercise 3: Array of Simple Values 
+db.subjects.insertOne({
+    "course_name": "B.Tech IT",
+    "subject_list": ["NoSQL", "Python", "Cloud Computing"]
+});
 
+// Exercise 4: Array of Objects 
+db.faculty.insertOne({
+    "department": "Information Technology",
+    "teachers": [
+        { "name": "Prof. Sharma", "experience": 10 },
+        { "name": "Prof. Verma", "experience": 5 }
+    ]
+});
+
+// Exercise 5: Explicit Primary Key 
 db.students.insertOne({
-... name: "meet",
-... department: "IT",
-... semester: 6,
-... mobile: "6524859651"
-... })
+    "_id": ObjectId("65001"),
+    "name": "Student With Manual ID",
+    "department": "IT",      // Added for safety
+    "semester": 4,           // Added for safety
+    "mobile": "0000000000"   // Added for safety
+});
 
-/*
-........EXERCISE 3..........
-*/
+// Exercise 6: Duplicate Primary Key Observation
+db.students.insertOne({
+    "_id": ObjectId("65001"),
+    "name": "This Will Fail"
+});
 
- db.subjects.insertOne({
-...   course_name: "BCA",
-...   subject_list: [
-...     "Data Structures",
-...     "Database Management Systems",
-...     "Operating Systems",
-...     "Computer Networks",
-...     "Software Engineering"
-...   ]
-... });
+// Exercise 7: Multiple Inserts Using insert()
+db.students.insert({ "name": "Batch A", "group": 1, "department": "IT", "semester": 4, "mobile": "111" });
+db.students.insert({ "name": "Batch B", "group": 2, "department": "IT", "semester": 4, "mobile": "222" });
+db.students.insert({ "name": "Batch C", "group": 3, "department": "IT", "semester": 4, "mobile": "333" });
 
-/*
-.........EXERCISE 4..........
-*/
-
- db.faculty.insertOne({
-... department: "IT",
-... teachers: [
-...     {name: "ankit patel" ,experience: "10"},
-...     {name: "bhumika patel" ,experience: "9"},
-...     {name: "karishma desai" ,experience: "15"}
-...     ]
-... });
-
-/*
-..........EXERCISE 5..........
-*/
-
-db.faculty.insertOne({
-...   _id: ObjectId(),
-...   department: "IT",
-...   teachers: [
-...     { name: "dhruti sharma", experience: 12 },
-...     { name: "vibha patel", experience: 6 }
-...   ]
-... });
-
-/*
-.........EXERCISE 6..........
-*/
-
- db.faculty.insertOne({
-...  _id: ObjectId('56561851b84524f689512a42'),
-... department: "IT",
-... teachers: [
-...     {name: "ankit kharwar"}
-...    ]
-... });
-
-db.faculty.insertOne({
-... _id: ObjectId('56561851b84524f689512a42'),
-... department: "CO",
-... teachers: [
-...    {name: "hiren patel"}
-...    ]
-... });
-MongoServerError: E11000 duplicate key error collection: examDB.faculty index: _id_ dup key: { _id: ObjectId('56561851b84524f689512a42') }
-
-/*
-..............EXERCISE 7...........
-*/
- db.students.insert({
-... name:"kartik",
-... department:"it",
-... semester:"6",
-... mobile:"7861041587"
-... });
-
-
- db.faculty.insert({
-... department:"IT",
-... teachers:[
-... {name:"tushar gohil"},
-... {experience:"7"}]
-... });
-
- db.subjects.insert({
-... course_name:"B.SC",
-... subject_list:["COA",
-... "Cryptography network security",
-... "Cloud computing"]
-... });
